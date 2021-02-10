@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "title": "assignment - cengizhan hakan"
+    },
+    "schemes": ["http"],
+    "paths": {
+        "/newgame": {
+            "post": {
+                "summary": "Creates a new game.",
+                "description": "creates a new game between specified players",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "required": ["players"],
+                        "properties": {
+                            "players": {
+                                "type": "array",
+                                "example": ["rapsodo","cengizhan"]
+                            }     
+                    }
+                }}],
+                "responses": {
+            }
+            }
+        },
+        "/makemove": {
+            "put": {
+                "summary": "Updates the game and returns the updated document.",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Updates the game and returns the updated document, Please create game first and then update the example gameid or your request will fail.",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "required": ["gameid","player","cup"],
+                        "properties": {
+                            "gameid": {
+                                "type": "string",
+                                "example": "602437c59937867be8c8fb2c"
+                            },
+                            "cup": {
+                                "type": "integer",
+                                "format": "int64",
+                                "example": 0
+                            },
+                            "player":{
+                                "type":"string",
+                                "example":"cengizhan"
+                            }     
+                    }
+                }}],
+                "responses": {
+            }
+            } 
+        }
+}
+}
+    
