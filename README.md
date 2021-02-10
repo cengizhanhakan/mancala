@@ -5,7 +5,8 @@ Garip ama eglenceli bir oyun.
 ## Kurulum
 
 ```bash
-npm install && node server
+npm install
+node server
 ```
 
 ## Notlar
